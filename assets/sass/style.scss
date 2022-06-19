@@ -133,21 +133,15 @@ section {
             @media screen and (orientation: landscape) {
                 top: 50%;
                 right: 50%;
-                margin-top: calc((100vh - 125px) * -.01);
-                margin-right: calc((100vh - 125px) * .3);
                 transform: translateY(-50%);
             }
             @media screen and (orientation: portrait) {
                 bottom: 50%;
                 left: 50%;
-                margin-bottom: calc((100vh - 159px) * .02);
                 transform: translate(-50%, -50%);
             }
             img {
                 margin-bottom: -15%;
-                @media screen and (orientation: landscape) {
-                    height: calc((100vh - 125px) * .408);
-                }
                 @media screen and (orientation: portrait) {
                     width: 54.104vw;
                 }
@@ -297,6 +291,15 @@ section {
         background: linear-gradient(180deg, $purple-200 0%, $purple-100 100%);
     }
     &.lecturer {
+        h3 {
+            @include media-breakpoint-down(md) {
+                @include fs(20);
+                span {
+                    display: block;
+                    font-size: 0;
+                }
+            }
+        }
         .img {
             width: 100%;
             max-width: 210px;
@@ -358,6 +361,14 @@ section {
                     }
                     img {
                         width: 100%;
+                    }
+                }
+                .text {
+                    @include media-breakpoint-up(md) {
+                        width: calc(100% - 80px);
+                    }
+                    @include media-breakpoint-down(md) {
+                        width: calc(100% - 60px);
                     }
                 }
             }

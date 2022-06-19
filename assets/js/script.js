@@ -3,16 +3,18 @@ let height = $(window).height();
 var kv = document.getElementById("kv");
 
 // KV Video Start
-setInterval(() => {
-    kv.currentTime = 0;
-    kv.play();
-    kv.ontimeupdate = function() {kvFunction()};
-}, 24000);
+if( !(/Android|webOS|iPhone|iPad|iPod|Opera Mini/i.test(navigator.userAgent)) ) {
+    setInterval(() => {
+        kv.currentTime = 0;
+        kv.play();
+        kv.ontimeupdate = function() {kvFunction()};
+    }, 24000);
+}
 
 kv.ontimeupdate = function() {kvFunction()};
 
 function kvFunction() {
-    if ( kv.currentTime > 1.5 && kv.currentTime < kv.duration ){
+    if ( kv.currentTime > 1.5 ){
         $('.title').fadeIn()
     } else {
         $('.title').hide()
@@ -24,6 +26,22 @@ function kvHeight(width, height) {
         $('.opening').height(height - 125);
     } else {
         $('.opening').height(height - 159);
+    }
+    if ( height > width ) { // portrait
+        $('.title-1').css({
+            'margin-bottom': -(height-159)*.02
+        });
+        $('.title-2').css({
+            'margin-top': -(height-159)*.06
+        });
+    } else {
+        $('.title-1').css({
+            'margin-top': -(height-125)*.01,
+            'margin-right': (height-125)*.3
+        });
+        $('.title-1 img').css({
+            'height': (height-125)*.408
+        });
     }
 }
 kvHeight(width, height);

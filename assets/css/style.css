@@ -4226,8 +4226,6 @@ section.opening .title div {
   section.opening .title-1 {
     top: 50%;
     right: 50%;
-    margin-top: calc((100vh - 125px) * -.01);
-    margin-right: calc((100vh - 125px) * .3);
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
   }
@@ -4237,7 +4235,6 @@ section.opening .title div {
   section.opening .title-1 {
     bottom: 50%;
     left: 50%;
-    margin-bottom: calc((100vh - 159px) * .02);
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
   }
@@ -4245,12 +4242,6 @@ section.opening .title div {
 
 section.opening .title-1 img {
   margin-bottom: -15%;
-}
-
-@media screen and (orientation: landscape) {
-  section.opening .title-1 img {
-    height: calc((100vh - 125px) * .408);
-  }
 }
 
 @media screen and (orientation: portrait) {
@@ -4453,6 +4444,16 @@ section.lecturer, section.faq {
   background: linear-gradient(180deg, #6300AD 0%, #5F31FF 100%);
 }
 
+@media (max-width: 767.98px) {
+  section.lecturer h3 {
+    font-size: 1.25rem;
+  }
+  section.lecturer h3 span {
+    display: block;
+    font-size: 0;
+  }
+}
+
 section.lecturer .img {
   width: 100%;
   max-width: 210px;
@@ -4538,6 +4539,18 @@ section.lesson-benefit .container-860 > div.lesson .icon {
 
 section.lesson-benefit .container-860 > div.lesson .icon img {
   width: 100%;
+}
+
+@media (min-width: 768px) {
+  section.lesson-benefit .container-860 > div.lesson .text {
+    width: calc(100% - 80px);
+  }
+}
+
+@media (max-width: 767.98px) {
+  section.lesson-benefit .container-860 > div.lesson .text {
+    width: calc(100% - 60px);
+  }
 }
 
 @media (min-width: 768px) {
