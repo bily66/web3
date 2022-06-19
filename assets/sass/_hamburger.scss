@@ -1,0 +1,53 @@
+$hamburger: (
+  width:  42px,
+  height: 33px,
+  unit:   3px,
+  gap:    5px
+);
+
+.hamburger {
+  position: relative;
+  width: map-get($hamburger, width);
+  height: map-get($hamburger, height);
+  padding: 5px 10px;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  @include media-breakpoint-up(lg) {
+    display: none;
+  }
+  span {
+    display: block;
+    width: 100%;
+    height: map-get($hamburger, unit);
+    background-color: $light;
+    border-radius: 10px;
+    + span {
+      margin-top: map-get($hamburger, gap);
+    }
+    @at-root {
+      .active#{&},
+      :hover#{&} {
+        background-color: $white;
+      }
+    }
+  }
+  @include media-breakpoint-down(lg) {
+    &.opened {
+      span {
+        width: (map-get($hamburger, width) - 20px) * 1.25;
+        // height: map-get($hamburger, unit) - 1px;
+        margin-top: 0;
+        &:nth-child(1) {
+          transform: rotate(-45deg) translate(-3px, 0px);
+        }
+        &:nth-child(2) {
+          display: none;
+        }
+        &:nth-child(3) {
+          transform: rotate(45deg) translate(-2.5px, 0.5px);
+        }
+      }      
+    }
+  }
+}

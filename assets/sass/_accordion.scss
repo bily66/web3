@@ -1,0 +1,18 @@
+.accordion {
+    .accordion-item {
+        + .accordion-item {
+            margin-top: 20px;
+        }
+    }
+    .accordion-header, .accordion-body {
+        display: flex;
+        span {
+            &.mark {
+                width: 2em;
+            }
+            &.text {
+                width: calc(100% - 2em);
+            }
+        }
+    }
+}

@@ -1,0 +1,43 @@
+.belt {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    @include fs(18);
+    text-align: center;
+    background: linear-gradient(90deg, $purple-100 0%, $heliotrope 30%, $purple-100 70%, $heliotrope 100%);
+    transition: left 0.3s;
+    @include media-breakpoint-up(md) {
+        @include fs(20);
+    }
+    &.opened {
+        left: 200px;
+    }
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        @include media-breakpoint-up(md) {
+            gap: 30px;
+        }
+        @include media-breakpoint-down(md) {
+            gap: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        @include media-breakpoint-down(sm) {
+            flex-direction: column;
+        }
+    }
+    .btn {
+        padding: 6px 25px 4px;
+        color: $purple-100;
+        font-weight: 500;
+        background-color: $white;
+        &:hover {
+            color: $white;
+            background-color: $purple-100;
+        }
+    }
+}

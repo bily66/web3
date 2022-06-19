@@ -1,0 +1,431 @@
+// Required
+@import "../../node_modules/bootstrap/scss/functions";
+@import "bootstrap/variables";
+
+$lemonglacier:  #FAFF00;
+
+$heliotrope:  #C45EFF;
+$deepfuchsia: #C443C3;
+
+$purple-100:  #5F31FF;
+$purple-200:  #6300AD;
+$purple-300:  #1E1A3D;
+
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "common";
+@import "bootstrap/bootstrap";
+@import "accordion";
+
+@import "header";
+@import "hamburger";
+@import "belt";
+
+main {
+    padding-top: 65px;
+    padding-bottom: 60px;
+    transition: margin 0.3s;
+    &.opened {
+        margin-left: 200px;
+        overflow: hidden;
+        section {
+            width: 100vw;
+        }
+    }
+}
+
+section {
+    .container-860 {
+        max-width: 900px;
+    }
+    h2 {
+        @include fs(24);
+        text-shadow: 0 0 15px $heliotrope;
+        @include media-breakpoint-up(md) {
+            @include fs(40);
+        }
+    }
+    h3 {
+        @include fs(24);
+        font-weight: 500;
+        @include media-breakpoint-up(md) {
+            @include fs(34);
+        }
+    }
+    h4 {
+        @include fs(20);
+        @include media-breakpoint-up(md) {
+            @include fs(22);
+        }
+    }
+    p {
+        &.fs20 {
+            @include media-breakpoint-up(md) {
+                @include fs(20);
+            }
+        }
+    }
+    table {
+        border: 1px solid $white;
+        border-collapse: collapse;
+        &.desktop {
+            @include media-breakpoint-down(md) {
+                display: none;
+            }
+        }
+        &.mobile {
+            @include media-breakpoint-up(md) {
+                display: none;
+            }
+        }
+        th, td {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            vertical-align: top;
+            border: 1px solid $white;
+            border-collapse: collapse;
+            @include media-breakpoint-up(md) {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            @include media-breakpoint-up(lg) {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            @include media-breakpoint-down(md) {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+        th {
+            background-color: rgba($white, 0.15);
+            text-align: left;
+            span {
+                display: inline-block;
+            }
+        }
+        td {
+            @include media-breakpoint-up(md) {
+                padding-top: 20px;
+               padding-bottom: 20px;
+            }
+        }
+    }
+    &.opening {
+        position: relative;
+        height: calc(100vh - 125px);
+        overflow: hidden;
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .title {
+            display: none;
+            position: absolute;
+            div {
+                @include fs(20);
+                @media screen and (orientation: portrait) {
+                    text-align: center;
+                }
+            }
+        }
+        .title-1 {
+            @media screen and (orientation: landscape) {
+                top: 50%;
+                right: 50%;
+                margin-top: calc((100vh - 125px) * -.01);
+                margin-right: calc((100vh - 125px) * .3);
+                transform: translateY(-50%);
+            }
+            @media screen and (orientation: portrait) {
+                bottom: 50%;
+                left: 50%;
+                margin-bottom: calc((100vh - 159px) * .02);
+                transform: translate(-50%, -50%);
+            }
+            img {
+                margin-bottom: -15%;
+                @media screen and (orientation: landscape) {
+                    height: calc((100vh - 125px) * .408);
+                }
+                @media screen and (orientation: portrait) {
+                    width: 54.104vw;
+                }
+            }
+            div {
+                @media screen and (orientation: landscape) {
+                    padding: 0 17%;
+                }
+            }
+        }
+        .title-2 {
+            top: 50%;
+            left: 50%;
+            @media screen and (orientation: landscape) {
+                margin-top: calc((100vh - 125px) * .065);
+                margin-left: calc((100vh - 125px) * -.12);
+                margin-right: -3%;
+                @media screen and (min-width: 1200px) {
+                    margin-left: calc((100vh - 125px) * -.08);
+                }
+            }
+            @media screen and (orientation: portrait) {
+                transform: translate(-50%, 50%);
+            }
+            img {
+                margin-bottom: -8%;
+                @media screen and (orientation: landscape) {
+                    height: calc((100vh - 125px) * .3298);
+                }
+                @media screen and (orientation: portrait) {
+                    width: 98vw;
+                }
+            }
+            div {
+                padding: 0 15%;
+            }
+        }
+    }
+    &.slogan {
+        padding-top: 120px;
+        padding-bottom: 120px;
+        @include media-breakpoint-up(md) {
+            padding-top: 250px;
+            padding-bottom: 250px;
+        }
+        h3 {
+            text-shadow: 0 0 15px $heliotrope;
+        }
+    }
+    &.intro {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        background-image: url('../images/metaverse-digital-cyber-world-technology-man-with-virtual-reality-vr-goggle-playing-ar-augmented.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        @include media-breakpoint-up(md) {
+            padding-top: 200px;
+            padding-bottom: 200px;
+        }
+    }
+    &.teaser, &.understand, &.lecturer, &.faq {
+        padding-top: 60px;
+        padding-bottom: 60px;
+        @include media-breakpoint-up(md) {
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+    }
+    &.teaser {
+        background-color: $black;
+        background-image: url('../images/web-next-generation-world-wide-web-blockchain-technology-with-decentralized-information.jpg');
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: cover;
+    }
+    &.understand {
+        .table {
+            @media screen and (max-width: 389px) {
+                margin-left: -10px;
+                margin-right: -10px;
+            }
+            @media screen and (max-width: 374px) {
+                margin-left: -15px;
+                margin-right: -15px;
+            }
+        }
+        table {
+            width: 100%;
+            @include media-breakpoint-down(md) {
+                line-height: 1.125;
+            }
+            td {
+                &:nth-child(2),
+                &:nth-child(3),
+                &:nth-child(4) {
+                    @media screen and (max-width: 747px) {
+                        width: 26%;
+                    }
+                    @media screen and (max-width: 450px) {
+                        width: 94px;
+                    }
+                    @media screen and (max-width: 390px) {
+                        width: 93px;
+                    }
+                }
+                &:nth-child(2) {
+                    @include media-breakpoint-down(lg) {
+                        @include media-breakpoint-up(md) {
+                            width: 140px;
+                        }
+                    }
+                }
+                &:nth-child(5) {
+                    @include media-breakpoint-down(lg) {
+                        @include media-breakpoint-up(md) {
+                            width: 165px;
+                        }
+                    }
+                }
+                .btn {
+                    color: $purple-100;
+                    font-weight: 500;
+                    background-color: $white;
+                    @include media-breakpoint-up(md) {
+                        display: inline-block;
+                        padding: 11px 25px 9px;
+                        @include fs(20);
+                    }
+                    @include media-breakpoint-down(md) {
+                        display: block;
+                        padding: 11px 4px;
+                        text-align: center;
+                    }
+                    &:hover {
+                        color: $white;
+                        background-color: $purple-100;
+                    }
+                }
+            }
+        }
+    }
+    &.lecturer, &.faq {
+        background: linear-gradient(180deg, $purple-200 0%, $purple-100 100%);
+    }
+    &.lecturer {
+        .img {
+            width: 100%;
+            max-width: 210px;
+            padding: 15px;
+            border: 1px solid rgba($white, 0.2) ;
+            border-radius: 50%;
+            img {
+                width: 100%;
+                border-radius: 50%;
+                overflow: hidden;
+            }
+        }
+        .btn {
+            display: table;
+            padding: 11px 25px 9px;
+            color: $purple-100;
+            @include fs(20);
+            font-weight: 500;
+            background-color: $white;
+            &:hover {
+                color: $white;
+                background-color: $purple-100;
+            }
+        }
+    }
+    &.lesson-benefit {
+        .container-860 > div {
+            padding-top: 60px;
+            padding-bottom: 60px;
+            @include media-breakpoint-up(md) {
+                padding-top: 80px;
+                padding-bottom: 80px;
+            }
+            &.lesson {
+                border-bottom: 1px solid rgba($white, 0.2);
+                .col-md-6 {
+                    display: flex;
+                    align-items: flex-start;
+                    margin-top: 20px;
+                    @include media-breakpoint-up(md) {
+                        margin-top: 40px;
+                        &:nth-child(2) {
+                            ul {
+                                margin-right: -10px;
+                            }
+                        }
+                    }
+                }
+                .icon {
+                    background: linear-gradient(180deg, $purple-200 0%, $purple-100 100%);
+                    border-radius: 50%;
+                    @include media-breakpoint-up(md) {
+                        width: 80px;
+                        padding: 10px;
+                    }
+                    @include media-breakpoint-down(md) {
+                        width: 60px;
+                        padding: 8px;
+                    }
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+            &.benefit {
+                table {
+                    td {
+                        &:nth-child(1) {
+                            @include media-breakpoint-up(md) {
+                                width: calc(100% - 420px);
+                            }
+                            @include media-breakpoint-down(md) {
+                                width: calc(100% - 150px);
+                            }
+                        }
+                        &:nth-child(2),
+                        &:nth-child(3) {
+                            @include media-breakpoint-up(md) {
+                                width: 210px;
+                            }
+                            @include media-breakpoint-down(md) {
+                                width: 75px;
+                            }
+                        }
+                        svg {
+                            display: block;
+                            margin: 10px auto;
+                        }
+                        div {
+                            @include media-breakpoint-up(md) {
+                                margin-bottom: -1.5em;
+                            }
+                            @include media-breakpoint-down(md) {
+                                margin-bottom: -3em;
+                                @include fs(14);
+                            }
+                        }
+                        h4 {
+                            @include media-breakpoint-down(md) {
+                                @include fs(18);
+                            }
+                        }
+                        h5 {
+                            @include fs(16);
+                            @include media-breakpoint-up(md) {
+                                @include fs(20);
+                            }
+                        }
+                        .highlight {
+                            color: $lemonglacier;
+                        }
+                    }
+                }            
+                .btn {
+                    display: table;
+                    padding: 11px 25px 9px;
+                    margin-top: 40px;
+                    color: $purple-100;
+                    @include fs(20);
+                    font-weight: 500;
+                    background-color: $white;
+                    &:hover {
+                        color: $white;
+                        background-color: $purple-100;
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    padding-top: 48px;
+    padding-bottom: 48px;
+}
