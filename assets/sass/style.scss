@@ -223,6 +223,9 @@ section {
         background-repeat: no-repeat;
         background-position: top center;
         background-size: cover;
+        .sr-only {
+            z-index: -1;
+        }
     }
     &.understand {
         .table {

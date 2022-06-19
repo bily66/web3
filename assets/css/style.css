@@ -4363,6 +4363,10 @@ section.teaser {
   background-size: cover;
 }
 
+section.teaser .sr-only {
+  z-index: -1;
+}
+
 @media screen and (max-width: 389px) {
   section.understand .table {
     margin-left: -10px;
