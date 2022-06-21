@@ -112,16 +112,12 @@ $('#pause').click( function(){
     // Checks for the video is playing or not.
     if (playerSatus == YT.PlayerState.PLAYING) {
         player.pauseVideo(); // 'player' variable we already defined and assigned.
-        player.mute();
     }
 });
 $('#play').click( function(){
     // Checks for the video is paused or not.
     if (playerSatus == YT.PlayerState.PAUSED) {
         player.playVideo();
-        if( !(/Android|webOS|iPhone|iPad|iPod|Opera Mini/i.test(navigator.userAgent)) ) {
-            player.unMute();
-        }
     }
 });
 
