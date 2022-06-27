@@ -11,6 +11,9 @@ $purple-100:  #5F31FF;
 $purple-200:  #6300AD;
 $purple-300:  #1E1A3D;
 
+$gradient-100:  #483F9C;
+$gradient-200:  #0F0B58;
+
 @import "../../node_modules/bootstrap/scss/mixins";
 @import "common";
 @import "bootstrap/bootstrap";
@@ -203,7 +206,7 @@ section {
             padding-bottom: 200px;
         }
     }
-    &.teaser, &.understand, &.lecturer, &.faq {
+    &.teaser, &.faq, &.applicability {
         padding-top: 60px;
         padding-bottom: 60px;
         @include media-breakpoint-up(md) {
@@ -221,7 +224,7 @@ section {
             z-index: -1;
         }
     }
-    &.understand {
+    .understand {
         .table {
             @media screen and (max-width: 389px) {
                 margin-left: -10px;
@@ -287,10 +290,7 @@ section {
             }
         }
     }
-    &.lecturer, &.faq {
-        background: linear-gradient(180deg, $purple-200 0%, $purple-100 100%);
-    }
-    &.lecturer {
+    .lecturer {
         h3 {
             @include media-breakpoint-down(md) {
                 @include fs(20);
@@ -325,6 +325,7 @@ section {
             }
         }
     }
+    &.understand-lecturer,
     &.lesson-benefit {
         .container-860 > div {
             padding-top: 60px;
@@ -333,8 +334,15 @@ section {
                 padding-top: 80px;
                 padding-bottom: 80px;
             }
+            &.understand,
             &.lesson {
                 border-bottom: 1px solid rgba($white, 0.2);
+            }
+        }
+    }
+    &.lesson-benefit {
+        .container-860 > div {
+            &.lesson {
                 .col-md-6 {
                     display: flex;
                     align-items: flex-start;
@@ -373,67 +381,107 @@ section {
                 }
             }
             &.benefit {
-                table {
-                    td {
-                        &:nth-child(1) {
-                            @include media-breakpoint-up(md) {
-                                width: calc(100% - 420px);
-                            }
-                            @include media-breakpoint-down(md) {
-                                width: calc(100% - 150px);
-                            }
+                .card-item {
+                    .card-text {
+                        margin-top: 10px;
+                        border: 1px solid rgba($white, 0.5);
+                        @include media-breakpoint-up(md) {
+                            height: calc(100% - 33px - 15px);
+                            margin-top: 15px;
                         }
-                        &:nth-child(2),
-                        &:nth-child(3) {
-                            @include media-breakpoint-up(md) {
-                                width: 210px;
-                            }
-                            @include media-breakpoint-down(md) {
-                                width: 75px;
-                            }
+                        p {
+                            margin-top: 5px;
+                            margin-bottom: 0;
                         }
-                        svg {
-                            display: block;
-                            margin: 10px auto;
-                        }
-                        div {
-                            @include media-breakpoint-up(md) {
-                                margin-bottom: -1.5em;
-                            }
-                            @include media-breakpoint-down(md) {
-                                margin-bottom: -3em;
-                                @include fs(14);
-                            }
-                        }
-                        h4 {
-                            @include media-breakpoint-down(md) {
-                                @include fs(18);
-                            }
-                        }
-                        h5 {
-                            @include fs(16);
-                            @include media-breakpoint-up(md) {
-                                @include fs(20);
-                            }
-                        }
-                        .highlight {
-                            color: $lemonglacier;
+                        ul {
+                            margin-top: 10px;
+                            margin-bottom: 0;
                         }
                     }
-                }            
+                }
+                .highlight {
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: baseline;
+                    justify-content: center;
+                    span {
+                        display: inline-block;
+                        @include fs(18);
+                        @include media-breakpoint-up(md) {
+                            @include fs(22);
+                        }
+                        &.day {
+                            color: $heliotrope;
+                            font-weight: bold;
+                        }
+                        &.title {
+                            color: $white;
+                            font-weight: bold;
+                        }
+                        &.price {
+                            color: #FAFF00;
+                            @include fs(30);
+                            font-weight: bold;
+                            @include media-breakpoint-up(md) {
+                                @include fs(40);
+                            }
+                        }
+                        &.original {
+                            color: $white;
+                            text-decoration: line-through;
+                            opacity: 0.5;
+                            @include media-breakpoint-down(md) {
+                                width: 100%;
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
                 .btn {
                     display: table;
                     padding: 11px 25px 9px;
-                    margin-top: 40px;
+                    margin-top: 20px;
                     color: $purple-100;
                     @include fs(20);
                     font-weight: 500;
                     background-color: $white;
+                    @include media-breakpoint-up(md) {
+                        margin-top: 40px;
+                    }
                     &:hover {
                         color: $white;
                         background-color: $purple-100;
                     }
                 }
+            }
+        }
+    }
+    &.faq,
+    &.applicability {
+        background: linear-gradient(180deg, $gradient-100 0%, $gradient-200 100%);
+    }
+    &.applicability {
+        .row {
+            gap: 60px 0;
+            @include media-breakpoint-down(md) {
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+            .col-6 {
+                @include media-breakpoint-down(md) {
+                    padding-left: 15px;
+                    padding-right: 15px;
+                }
+            }
+        }
+        .text {
+            &::before {
+                @include beforeafter('', block);
+                width: 60px;
+                height: 5px;
+                margin: 15px auto;
+                background-color: $purple-100;
+                border-radius: 5px;
             }
         }
     }

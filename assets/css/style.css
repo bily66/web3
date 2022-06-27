@@ -4334,13 +4334,13 @@ section.intro {
   }
 }
 
-section.teaser, section.understand, section.lecturer, section.faq {
+section.teaser, section.faq, section.applicability {
   padding-top: 60px;
   padding-bottom: 60px;
 }
 
 @media (min-width: 768px) {
-  section.teaser, section.understand, section.lecturer, section.faq {
+  section.teaser, section.faq, section.applicability {
     padding-top: 80px;
     padding-bottom: 80px;
   }
@@ -4359,67 +4359,67 @@ section.teaser .sr-only {
 }
 
 @media screen and (max-width: 389px) {
-  section.understand .table {
+  section .understand .table {
     margin-left: -10px;
     margin-right: -10px;
   }
 }
 
 @media screen and (max-width: 374px) {
-  section.understand .table {
+  section .understand .table {
     margin-left: -15px;
     margin-right: -15px;
   }
 }
 
-section.understand table {
+section .understand table {
   width: 100%;
 }
 
 @media (max-width: 767.98px) {
-  section.understand table {
+  section .understand table {
     line-height: 1.125;
   }
 }
 
 @media screen and (max-width: 747px) {
-  section.understand table td:nth-child(2), section.understand table td:nth-child(3), section.understand table td:nth-child(4) {
+  section .understand table td:nth-child(2), section .understand table td:nth-child(3), section .understand table td:nth-child(4) {
     width: 26%;
   }
 }
 
 @media screen and (max-width: 450px) {
-  section.understand table td:nth-child(2), section.understand table td:nth-child(3), section.understand table td:nth-child(4) {
+  section .understand table td:nth-child(2), section .understand table td:nth-child(3), section .understand table td:nth-child(4) {
     width: 94px;
   }
 }
 
 @media screen and (max-width: 390px) {
-  section.understand table td:nth-child(2), section.understand table td:nth-child(3), section.understand table td:nth-child(4) {
+  section .understand table td:nth-child(2), section .understand table td:nth-child(3), section .understand table td:nth-child(4) {
     width: 93px;
   }
 }
 
 @media (max-width: 991.98px) and (min-width: 768px) {
-  section.understand table td:nth-child(2) {
+  section .understand table td:nth-child(2) {
     width: 140px;
   }
 }
 
 @media (max-width: 991.98px) and (min-width: 768px) {
-  section.understand table td:nth-child(5) {
+  section .understand table td:nth-child(5) {
     width: 165px;
   }
 }
 
-section.understand table td .btn {
+section .understand table td .btn {
   color: #5F31FF;
   font-weight: 500;
   background-color: #fff;
 }
 
 @media (min-width: 768px) {
-  section.understand table td .btn {
+  section .understand table td .btn {
     display: inline-block;
     padding: 11px 25px 9px;
     font-size: 1.25rem;
@@ -4427,34 +4427,29 @@ section.understand table td .btn {
 }
 
 @media (max-width: 767.98px) {
-  section.understand table td .btn {
+  section .understand table td .btn {
     display: block;
     padding: 11px 4px;
     text-align: center;
   }
 }
 
-section.understand table td .btn:hover {
+section .understand table td .btn:hover {
   color: #fff;
   background-color: #5F31FF;
 }
 
-section.lecturer, section.faq {
-  background: -webkit-gradient(linear, left top, left bottom, from(#6300AD), to(#5F31FF));
-  background: linear-gradient(180deg, #6300AD 0%, #5F31FF 100%);
-}
-
 @media (max-width: 767.98px) {
-  section.lecturer h3 {
+  section .lecturer h3 {
     font-size: 1.25rem;
   }
-  section.lecturer h3 span {
+  section .lecturer h3 span {
     display: block;
     font-size: 0;
   }
 }
 
-section.lecturer .img {
+section .lecturer .img {
   width: 100%;
   max-width: 210px;
   padding: 15px;
@@ -4462,13 +4457,13 @@ section.lecturer .img {
   border-radius: 50%;
 }
 
-section.lecturer .img img {
+section .lecturer .img img {
   width: 100%;
   border-radius: 50%;
   overflow: hidden;
 }
 
-section.lecturer .btn {
+section .lecturer .btn {
   display: table;
   padding: 11px 25px 9px;
   color: #5F31FF;
@@ -4477,24 +4472,24 @@ section.lecturer .btn {
   background-color: #fff;
 }
 
-section.lecturer .btn:hover {
+section .lecturer .btn:hover {
   color: #fff;
   background-color: #5F31FF;
 }
 
-section.lesson-benefit .container-860 > div {
+section.understand-lecturer .container-860 > div, section.lesson-benefit .container-860 > div {
   padding-top: 60px;
   padding-bottom: 60px;
 }
 
 @media (min-width: 768px) {
-  section.lesson-benefit .container-860 > div {
+  section.understand-lecturer .container-860 > div, section.lesson-benefit .container-860 > div {
     padding-top: 80px;
     padding-bottom: 80px;
   }
 }
 
-section.lesson-benefit .container-860 > div.lesson {
+section.understand-lecturer .container-860 > div.understand, section.understand-lecturer .container-860 > div.lesson, section.lesson-benefit .container-860 > div.understand, section.lesson-benefit .container-860 > div.lesson {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -4553,81 +4548,140 @@ section.lesson-benefit .container-860 > div.lesson .icon img {
   }
 }
 
-@media (min-width: 768px) {
-  section.lesson-benefit .container-860 > div.benefit table td:nth-child(1) {
-    width: calc(100% - 420px);
-  }
-}
-
-@media (max-width: 767.98px) {
-  section.lesson-benefit .container-860 > div.benefit table td:nth-child(1) {
-    width: calc(100% - 150px);
-  }
+section.lesson-benefit .container-860 > div.benefit .card-item .card-text {
+  margin-top: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 @media (min-width: 768px) {
-  section.lesson-benefit .container-860 > div.benefit table td:nth-child(2), section.lesson-benefit .container-860 > div.benefit table td:nth-child(3) {
-    width: 210px;
+  section.lesson-benefit .container-860 > div.benefit .card-item .card-text {
+    height: calc(100% - 33px - 15px);
+    margin-top: 15px;
   }
 }
 
-@media (max-width: 767.98px) {
-  section.lesson-benefit .container-860 > div.benefit table td:nth-child(2), section.lesson-benefit .container-860 > div.benefit table td:nth-child(3) {
-    width: 75px;
-  }
+section.lesson-benefit .container-860 > div.benefit .card-item .card-text p {
+  margin-top: 5px;
+  margin-bottom: 0;
 }
 
-section.lesson-benefit .container-860 > div.benefit table td svg {
-  display: block;
-  margin: 10px auto;
+section.lesson-benefit .container-860 > div.benefit .card-item .card-text ul {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+section.lesson-benefit .container-860 > div.benefit .highlight {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+section.lesson-benefit .container-860 > div.benefit .highlight span {
+  display: inline-block;
+  font-size: 1.125rem;
 }
 
 @media (min-width: 768px) {
-  section.lesson-benefit .container-860 > div.benefit table td div {
-    margin-bottom: -1.5em;
+  section.lesson-benefit .container-860 > div.benefit .highlight span {
+    font-size: 1.375rem;
   }
 }
 
-@media (max-width: 767.98px) {
-  section.lesson-benefit .container-860 > div.benefit table td div {
-    margin-bottom: -3em;
-    font-size: 0.875rem;
-  }
+section.lesson-benefit .container-860 > div.benefit .highlight span.day {
+  color: #C45EFF;
+  font-weight: bold;
 }
 
-@media (max-width: 767.98px) {
-  section.lesson-benefit .container-860 > div.benefit table td h4 {
-    font-size: 1.125rem;
-  }
+section.lesson-benefit .container-860 > div.benefit .highlight span.title {
+  color: #fff;
+  font-weight: bold;
 }
 
-section.lesson-benefit .container-860 > div.benefit table td h5 {
-  font-size: 1rem;
-}
-
-@media (min-width: 768px) {
-  section.lesson-benefit .container-860 > div.benefit table td h5 {
-    font-size: 1.25rem;
-  }
-}
-
-section.lesson-benefit .container-860 > div.benefit table td .highlight {
+section.lesson-benefit .container-860 > div.benefit .highlight span.price {
   color: #FAFF00;
+  font-size: 1.875rem;
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  section.lesson-benefit .container-860 > div.benefit .highlight span.price {
+    font-size: 2.5rem;
+  }
+}
+
+section.lesson-benefit .container-860 > div.benefit .highlight span.original {
+  color: #fff;
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+@media (max-width: 767.98px) {
+  section.lesson-benefit .container-860 > div.benefit .highlight span.original {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 section.lesson-benefit .container-860 > div.benefit .btn {
   display: table;
   padding: 11px 25px 9px;
-  margin-top: 40px;
+  margin-top: 20px;
   color: #5F31FF;
   font-size: 1.25rem;
   font-weight: 500;
   background-color: #fff;
 }
 
+@media (min-width: 768px) {
+  section.lesson-benefit .container-860 > div.benefit .btn {
+    margin-top: 40px;
+  }
+}
+
 section.lesson-benefit .container-860 > div.benefit .btn:hover {
   color: #fff;
   background-color: #5F31FF;
+}
+
+section.faq, section.applicability {
+  background: -webkit-gradient(linear, left top, left bottom, from(#483F9C), to(#0F0B58));
+  background: linear-gradient(180deg, #483F9C 0%, #0F0B58 100%);
+}
+
+section.applicability .row {
+  gap: 60px 0;
+}
+
+@media (max-width: 767.98px) {
+  section.applicability .row {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  section.applicability .row .col-6 {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+section.applicability .text::before {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 5px;
+  margin: 15px auto;
+  background-color: #5F31FF;
+  border-radius: 5px;
 }
 
 footer {
