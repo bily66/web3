@@ -67,52 +67,6 @@ section {
             }
         }
     }
-    table {
-        border: 1px solid $white;
-        border-collapse: collapse;
-        &.desktop {
-            @include media-breakpoint-down(md) {
-                display: none;
-            }
-        }
-        &.mobile {
-            @include media-breakpoint-up(md) {
-                display: none;
-            }
-        }
-        th, td {
-            padding-top: 10px;
-            padding-bottom: 10px;
-            vertical-align: top;
-            border: 1px solid $white;
-            border-collapse: collapse;
-            @include media-breakpoint-up(md) {
-                padding-left: 15px;
-                padding-right: 15px;
-            }
-            @include media-breakpoint-up(lg) {
-                padding-left: 20px;
-                padding-right: 20px;
-            }
-            @include media-breakpoint-down(md) {
-                padding-left: 10px;
-                padding-right: 10px;
-            }
-        }
-        th {
-            background-color: rgba($white, 0.15);
-            text-align: left;
-            span {
-                display: inline-block;
-            }
-        }
-        td {
-            @include media-breakpoint-up(md) {
-                padding-top: 20px;
-               padding-bottom: 20px;
-            }
-        }
-    }
     &.opening {
         position: relative;
         height: calc(100vh - 125px);
@@ -225,66 +179,122 @@ section {
         }
     }
     .understand {
-        .table {
-            @media screen and (max-width: 389px) {
-                margin-left: -10px;
-                margin-right: -10px;
+        .process-group {
+            @include media-breakpoint-up(md) {
+                display: flex;
             }
-            @media screen and (max-width: 374px) {
-                margin-left: -15px;
-                margin-right: -15px;
-            }
-        }
-        table {
-            width: 100%;
             @include media-breakpoint-down(md) {
-                line-height: 1.125;
+                display: table;
+                padding-left: 25px;
             }
-            td {
-                &:nth-child(2),
-                &:nth-child(3),
-                &:nth-child(4) {
-                    @media screen and (max-width: 747px) {
-                        width: 26%;
-                    }
-                    @media screen and (max-width: 450px) {
-                        width: 94px;
-                    }
-                    @media screen and (max-width: 390px) {
-                        width: 93px;
+            .process-item {
+                position: relative;
+                @include fs(16);
+                @include media-breakpoint-up(md) {
+                    width: 33.3333%;
+                }
+                @include media-breakpoint-down(md) {
+                    &::before {
+                        @include beforeafter('', block);
+                        position: absolute;
+                        top: 15px;
+                        left: -22.5px;
+                        width: 3px;
+                        height: calc(100% + 40px);
+                        background-color: #403C5A;
                     }
                 }
-                &:nth-child(2) {
-                    @include media-breakpoint-down(lg) {
-                        @include media-breakpoint-up(md) {
-                            width: 140px;
+                + .process-item {
+                    @include media-breakpoint-down(md) {
+                        margin-top: 40px;
+                    }
+                }
+                &:last-child {
+                    @include media-breakpoint-down(md) {
+                        &::before {
+                            height: 100%;
+                        }
+                        &::after {
+                            @include beforeafter('', block);
+                            position: absolute;
+                            bottom: -30px;
+                            left: -21px;
+                            width: 0;
+                            height: 0;
+                            border-style: solid;
+                            border-width: 16px 10px 0 10px;
+                            border-color: #403C5A transparent transparent transparent;
+                            transform: translateX(-50%);
+                        }
+                    }
+                    .device {
+                        &::before {
+                            @include media-breakpoint-up(md) {
+                                width: calc(100% - 10px);
+                            }
+                        }
+                        &::after {
+                            @include beforeafter('', block);
+                            position: absolute;
+                            @include media-breakpoint-up(md) {
+                                top: 50%;
+                                right: 0;
+                                width: 0;
+                                height: 0;
+                                border-style: solid;
+                                border-width: 10px 0 10px 16px;
+                                border-color: transparent transparent transparent #403C5A;
+                                transform: translateY(-50%);
+                            }
                         }
                     }
                 }
-                &:nth-child(5) {
-                    @include media-breakpoint-down(lg) {
-                        @include media-breakpoint-up(md) {
-                            width: 165px;
-                        }
+            }
+            h3 {
+                position: relative;
+                margin-top: 0;
+                margin-bottom: 5px;
+                @include fs(22);
+                text-shadow: 0 0 15px $heliotrope;
+                @include media-breakpoint-down(md) {
+                    &::before {
+                        @include beforeafter('', block);
+                        position: absolute;
+                        top: 50%;
+                        left: -26px;
+                        width: 10px;
+                        height: 10px;
+                        background-color: #403C5A;
+                        border-radius: 50%;
+                        transform: translateY(-50%);
                     }
                 }
-                .btn {
-                    color: $purple-100;
-                    font-weight: 500;
-                    background-color: $white;
+            }
+            .device {
+                position: relative;
+                margin: 15px 0;
+                z-index: 0;
+                span {
+                    padding: 15px 20px;
+                    background-color: #403C5A;
                     @include media-breakpoint-up(md) {
-                        display: inline-block;
-                        padding: 11px 25px 9px;
-                        @include fs(20);
+                        display: table;
                     }
                     @include media-breakpoint-down(md) {
                         display: block;
-                        padding: 11px 4px;
-                        text-align: center;
                     }
-                    &:hover {
-                        color: $white;
-                        background-color: $purple-100;
+                }
+                &::before {
+                    @include beforeafter('', block);
+                    position: absolute;
+                    z-index: -1;
+                    @include media-breakpoint-up(md) {
+                        top: 50%;
+                        left: 0;
+                        width: 100%;
+                        height: 3px;
+                        background-color: #403C5A;
+                        transform: translateY(-50%);
                     }
                 }
             }
@@ -419,9 +429,10 @@ section {
                             font-weight: bold;
                         }
                         &.price {
-                            color: #FAFF00;
+                            color: $white;
                             @include fs(30);
                             font-weight: bold;
+                            text-shadow: 0 0 15px $heliotrope;
                             @include media-breakpoint-up(md) {
                                 @include fs(40);
                             }
