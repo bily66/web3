@@ -4703,4 +4703,8 @@ footer {
   padding-top: 48px;
   padding-bottom: 48px;
 }
+
+footer a {
+  color: #fff;
+}
 /*# sourceMappingURL=style.css.map */
