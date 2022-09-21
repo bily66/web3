@@ -4703,6 +4703,11 @@ section.lesson-benefit .container-860 > div.lesson .icon img {
   }
 }
 
+section.lesson-benefit .container-860 > div.lesson .text ul {
+  list-style: none;
+  padding-left: 0;
+}
+
 section.lesson-benefit .container-860 > div.benefit .card-item .card-text {
   margin-top: 10px;
   border: 1px solid rgba(255, 255, 255, 0.5);
