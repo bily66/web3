@@ -133,7 +133,9 @@ section {
                 }
             }
             div {
-                padding: 0 15%;
+                @media screen and (min-width: 1200px) {
+                    padding: 0 15%;
+                }
             }
         }
     }
@@ -344,8 +346,7 @@ section {
                 padding-top: 80px;
                 padding-bottom: 80px;
             }
-            &.understand,
-            &.lesson {
+            &.understand {
                 border-bottom: 1px solid rgba($white, 0.2);
             }
         }
@@ -495,6 +496,33 @@ section {
                 border-radius: 5px;
             }
         }
+    }
+    &.ntf {
+      position: relative;
+      padding-top: 60px;
+      padding-bottom: 60px;
+      background: linear-gradient(180deg, #120b19 0%, #120b19 50%, #170535 50%, #170535 100%);
+      .img-mask {
+        position: relative;
+        overflow: hidden;
+        &::before {
+          content: '';
+          display: block;
+          width: 100%;
+          padding-top: calc(974 / 2560 * 160%);
+          @include media-breakpoint-up(md) {
+            padding-top: calc(974 / 2560 * 100%);
+          }
+        }
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
     }
 }
 

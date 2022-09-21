@@ -25,14 +25,14 @@ function kvHeight(width, height) {
     if ( width > 576 ) {
         $('.opening').height(height - 125);
     } else {
-        $('.opening').height(height - 159);
+        $('.opening').height(height - 122);
     }
     if ( height > width ) { // portrait
         $('.title-1').css({
-            'margin-bottom': -(height-159)*.02
+            'margin-bottom': -(height-122)*0
         });
         $('.title-2').css({
-            'margin-top': -(height-159)*.06
+            'margin-top': -(height-122)*0
         });
     } else {
         $('.title-1').css({
@@ -78,7 +78,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag); // Include the API 
 */
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
-        videoId: 'oFyCwF_PPWs', // Providing the video ID.
+        videoId: 'jDu-lTPlmF8', // Providing the video ID.
         height: '284', // Video height.
         width: '486', // Video width.
         playerVars: {
