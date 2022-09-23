@@ -4201,6 +4201,15 @@ nav ul li a:hover {
   }
 }
 
+@media (max-width: 575.98px) {
+  .belt .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .belt .btn {
   padding: 6px 25px 4px;
   color: #5F31FF;
@@ -4375,7 +4384,7 @@ section.opening .title-2 img {
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
   section.opening .title-2 div {
     padding: 0 15%;
   }

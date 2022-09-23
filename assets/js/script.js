@@ -25,14 +25,14 @@ function kvHeight(width, height) {
     if ( width > 576 ) {
         $('.opening').height(height - 125);
     } else {
-        $('.opening').height(height - 122);
+        $('.opening').height(height - 159);
     }
     if ( height > width ) { // portrait
         $('.title-1').css({
-            'margin-bottom': -(height-122)*0
+            'margin-bottom': -(height-159)*0
         });
         $('.title-2').css({
-            'margin-top': -(height-122)*0
+            'margin-top': -(height-159)*0
         });
     } else {
         $('.title-1').css({
